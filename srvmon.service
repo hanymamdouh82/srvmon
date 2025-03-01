@@ -1,0 +1,16 @@
+[Unit]
+Description=Hany Server Monitoring Daemon
+After=network.target
+
+[Service]
+ExecStart=/usr/local/bin/srvmon -server
+Restart=always
+User=root
+WorkingDirectory=/usr/local/bin 
+LimitNOFILE=65535
+StandardOutput=journal
+StandardError=journal
+Environment="GODEBUG=madvdontneed=1"
+
+[Install]
+WantedBy=multi-user.target
