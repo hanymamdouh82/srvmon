@@ -1,8 +1,0 @@
-servers:
-  - servername: MyPC
-    address: 192.168.1.2:9090
-  - servername: HV-TRDC-03
-    address: 196.219.84.2:9090
-  - servername: TRDCFS
-    address: 192.168.1.5:9090
-

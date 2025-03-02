@@ -3,7 +3,7 @@ Description=Hany Server Monitoring Daemon
 After=network.target
 
 [Service]
-ExecStart=/usr/local/bin/srvmon -server
+ExecStart=/usr/local/bin/srvmon -server -conf=/etc/srvmon/conf.yaml
 Restart=always
 User=root
 WorkingDirectory=/usr/local/bin 

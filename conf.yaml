@@ -1,0 +1,9 @@
+port: 9090
+interval: 3 # update interval
+disks:
+  - /
+  - /mnt/repos
+logduration: 1000  # minutes
+processes:
+  - docker
+  - alacritty
