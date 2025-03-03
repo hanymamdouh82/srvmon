@@ -2,7 +2,6 @@ package data
 
 import (
 	"fmt"
-	"log"
 	"os"
 	"os/exec"
 	"strings"
@@ -68,7 +67,7 @@ func processes(conf *t.ServerConfig, d *t.MonData) {
 	for _, proc := range conf.Processes {
 		pids, err := FindProcessByName(proc)
 		if err != nil {
-			log.Fatal(err)
+			return
 		}
 
 		for _, pid := range pids {
