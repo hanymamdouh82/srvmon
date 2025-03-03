@@ -65,10 +65,7 @@ func processes(conf *t.ServerConfig, d *t.MonData) {
 	d.Processes = []t.ProcessInfo{}
 
 	for _, proc := range conf.Processes {
-		pids, err := FindProcessByName(proc)
-		if err != nil {
-			return
-		}
+		pids, _ := FindProcessByName(proc)
 
 		for _, pid := range pids {
 			p, err := process.NewProcess(pid)
