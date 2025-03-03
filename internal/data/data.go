@@ -29,6 +29,7 @@ func GetData(conf *t.ServerConfig) (data t.MonData) {
 
 func mem(d *t.MonData) {
 	d.FreeMem = memory.FreeMemory()
+	d.TotalMemory = memory.TotalMemory()
 }
 
 func hostName(d *t.MonData) {

@@ -26,12 +26,13 @@ type ProcessInfo struct {
 }
 
 type MonData struct {
-	Timestamp time.Time      `json:"timestamp"`
-	HostName  string         `json:"hostname"`
-	FreeMem   uint64         `json:"freemem"`
-	DiskUsage map[string]int `json:"diskusage"`
-	CPULoad   int            `json:"cpuload"`
-	Processes []ProcessInfo  `json:"processes"`
+	Timestamp   time.Time      `json:"timestamp"`
+	HostName    string         `json:"hostname"`
+	FreeMem     uint64         `json:"freemem"`
+	TotalMemory uint64         `json:"totalMemory"`
+	DiskUsage   map[string]int `json:"diskusage"`
+	CPULoad     int            `json:"cpuload"`
+	Processes   []ProcessInfo  `json:"processes"`
 }
 
 // ServerConfig represents the structure of the YAML file

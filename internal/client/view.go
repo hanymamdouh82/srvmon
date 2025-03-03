@@ -35,7 +35,7 @@ func displayLoop() {
 		Foreground(tcell.ColorYellow)) // Highlight text without changing background
 
 	// Define headers
-	headers := []string{"Hostname", "Free Memory", "CPU Load", "Processes"}
+	headers := []string{"Hostname", "Memory (Free/Total)", "CPU Load", "Monitored Processes"}
 
 	// Create a text view for details
 	detailsView := tview.NewTextView().
@@ -90,7 +90,7 @@ func displayLoop() {
 		// Populate table with data
 		for i, data := range serverDataList {
 			table.SetCell(i+1, 0, tview.NewTableCell(data.HostName).SetAlign(tview.AlignCenter))
-			table.SetCell(i+1, 1, tview.NewTableCell(fmt.Sprintf("%d MB", data.FreeMem/1024/1024)).SetAlign(tview.AlignCenter))
+			table.SetCell(i+1, 1, tview.NewTableCell(fmt.Sprintf("%d / %dMB", data.FreeMem/1024/1024, data.TotalMemory/1024/1024)).SetAlign(tview.AlignCenter))
 			table.SetCell(i+1, 2, tview.NewTableCell(fmt.Sprintf("%d%%", data.CPULoad)).SetAlign(tview.AlignCenter))
 			table.SetCell(i+1, 3, tview.NewTableCell(fmt.Sprintf("%d", len(data.Processes))).SetAlign(tview.AlignCenter))
 		}
